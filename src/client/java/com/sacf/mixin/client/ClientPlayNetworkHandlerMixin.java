@@ -1,4 +1,4 @@
-package com.example.mixin.client;
+package com.sacf.mixin.client;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientCommonNetworkHandler;

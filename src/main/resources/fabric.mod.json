@@ -11,27 +11,27 @@
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
+	"license": "MIT",
+	"icon": "assets/sacf/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+			"com.sacf.ExampleMod"
 		],
 		"client": [
-          "com.example.SizeAttributeCounterFixClient"
+          "com.sacf.SizeAttributeCounterFixClient"
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
+		"sacf.mixins.json",
 		{
-			"config": "modid.client.mixins.json",
+			"config": "sacf.client.mixins.json",
 			"environment": "client"
 		}
 	],
 	"depends": {
 		"fabricloader": ">=0.16.10",
-		"minecraft": "~1.21.5",
+		"minecraft": "~1.21.*",
 		"java": ">=21",
 		"fabric-api": "*"
 	},
