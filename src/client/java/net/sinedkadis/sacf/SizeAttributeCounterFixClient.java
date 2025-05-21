@@ -1,4 +1,4 @@
-package com.sacf;
+package net.sinedkadis.sacf;
 
 import net.fabricmc.api.ClientModInitializer;
 

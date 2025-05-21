@@ -5,7 +5,7 @@
 	"name": "Size Attribute Counter Fix",
 	"description": "Make scale attribute on newer versions work like on older",
 	"authors": [
-		"SinedKadis"
+		"SinedKadis,Terriwin"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.sacf.ExampleMod"
+			"net.sinedkadis.sacf.ExampleMod"
 		],
 		"client": [
-          "com.sacf.SizeAttributeCounterFixClient"
+			"net.sinedkadis.sacf.SizeAttributeCounterFixClient"
 		]
 	},
 	"mixins": [
@@ -30,8 +30,8 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.16.10",
-		"minecraft": "~1.21.*",
+		"fabricloader": ">=0.16.9",
+		"minecraft": ">=1.21.1",
 		"java": ">=21",
 		"fabric-api": "*"
 	},
