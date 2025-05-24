@@ -1,0 +1,8 @@
+{
+  "key.sacf.size_attribute_bind": "Вкл/выкл игнор scale атрибута",
+  "category.sacf.binds": "Size Attribute Counter Fix",
+  "key.sacf.size_attribute_bind.enabled": "Игнорирование Scale включено",
+  "key.sacf.size_attribute_bind.disabled": "Игнорирование Scale выключено",
+  "text.autoconfig.sacf.option.showToggleMessages": "Показывать сообщения о переключении в чате",
+  "text.autoconfig.sacf.title": "Size Attribute Counter Fix"
+}

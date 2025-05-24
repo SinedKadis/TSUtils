@@ -1,0 +1,8 @@
+{
+  "key.sacf.size_attribute_bind": "Enable/Disable scale attribute ignoring",
+  "category.sacf.binds": "Size Attribute Counter Fix",
+  "key.sacf.size_attribute_bind.enabled": "Scale ignoring enabled",
+  "key.sacf.size_attribute_bind.disabled": "Scale ignoring disabled",
+  "text.autoconfig.sacf.option.showToggleMessages": "Show messages of toggling in chat",
+  "text.autoconfig.sacf.title": "Size Attribute Counter Fix"
+}
