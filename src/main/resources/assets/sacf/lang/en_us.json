@@ -4,5 +4,6 @@
   "key.sacf.size_attribute_bind.enabled": "Scale ignoring enabled",
   "key.sacf.size_attribute_bind.disabled": "Scale ignoring disabled",
   "text.autoconfig.sacf.option.showToggleMessages": "Show messages of toggling in chat",
+  "text.autoconfig.sacf.option.showToggleMessages.@Tooltip": "Yes, or no",
   "text.autoconfig.sacf.title": "Size Attribute Counter Fix"
 }

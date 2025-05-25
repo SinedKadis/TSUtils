@@ -2,6 +2,7 @@ package net.sinedkadis.sacf.binds;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.entity.attribute.AttributeContainer;
@@ -27,33 +28,40 @@ public class SizeAttributeBind {
                 "category.sacf.binds"
         ));
 
-        ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            boolean isPressed = SIZE_ATTRIBUTE_BIND.isPressed();
+        ClientTickEvents.END_CLIENT_TICK.register(SizeAttributeBind::updateScale);
+    }
 
-            if (isPressed && !wasPressedLastTick) {
-                toggleState = !toggleState;
-                if (!toggleState && !scaleAttributes.isEmpty()){
-                    for (Map.Entry<AttributeContainer, EntityAttributesS2CPacket.Entry> mapEntry : scaleAttributes.entrySet()){
-                        EntityAttributeInstance attributeInstance = mapEntry.getKey().getCustomInstance(mapEntry.getValue().attribute());
-                        assert attributeInstance != null;
-                        attributeInstance.setBaseValue(mapEntry.getValue().base());
-                        attributeInstance.clearModifiers();
-                        mapEntry.getValue().modifiers().forEach(attributeInstance::addTemporaryModifier);
-                    }
-                } if (toggleState && !scaleAttributes.isEmpty()){
-                    for (Map.Entry<AttributeContainer, EntityAttributesS2CPacket.Entry> mapEntry : scaleAttributes.entrySet()){
-                        EntityAttributeInstance attributeInstance = mapEntry.getKey().getCustomInstance(mapEntry.getValue().attribute());
-                        assert attributeInstance != null;
-                        attributeInstance.setBaseValue(mapEntry.getValue().attribute().value().getDefaultValue());
-                        attributeInstance.clearModifiers();
-                    }
-                }
-                if (SACFConfig.get().showToggleMessages && client.player != null) {
-                    client.player.sendMessage(Text.translatable(toggleState ? "key.sacf.size_attribute_bind.enabled" : "key.sacf.size_attribute_bind.disabled"), false);
-                }
+    public static void updateScale(MinecraftClient client) {
+        boolean isPressed = SIZE_ATTRIBUTE_BIND.isPressed();
+
+        if (isPressed && !wasPressedLastTick) {
+            toggleState = !toggleState;
+            applyScale();
+            if (SACFConfig.get().showToggleMessages && client.player != null) {
+                client.player.sendMessage(Text.translatable(toggleState ? "key.sacf.size_attribute_bind.enabled" : "key.sacf.size_attribute_bind.disabled"), false);
             }
+        }
 
-            wasPressedLastTick = isPressed;
-        });
+        wasPressedLastTick = isPressed;
+    }
+
+    public static void applyScale() {
+        if (!toggleState && !scaleAttributes.isEmpty()){
+            for (Map.Entry<AttributeContainer, EntityAttributesS2CPacket.Entry> mapEntry : scaleAttributes.entrySet()){
+                EntityAttributeInstance attributeInstance = mapEntry.getKey().getCustomInstance(mapEntry.getValue().attribute());
+                assert attributeInstance != null;
+                attributeInstance.setBaseValue(mapEntry.getValue().base());
+                attributeInstance.clearModifiers();
+                mapEntry.getValue().modifiers().forEach(attributeInstance::addTemporaryModifier);
+            }
+        }
+        if (toggleState && !scaleAttributes.isEmpty()){
+            for (Map.Entry<AttributeContainer, EntityAttributesS2CPacket.Entry> mapEntry : scaleAttributes.entrySet()){
+                EntityAttributeInstance attributeInstance = mapEntry.getKey().getCustomInstance(mapEntry.getValue().attribute());
+                assert attributeInstance != null;
+                attributeInstance.setBaseValue(mapEntry.getValue().attribute().value().getDefaultValue());
+                attributeInstance.clearModifiers();
+            }
+        }
     }
 }
