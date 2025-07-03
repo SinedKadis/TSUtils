@@ -1,4 +1,4 @@
-package net.sinedkadis.sacf.mixin.client;
+package net.sinedkadis.ts_utils.mixin.client;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.world.ClientWorld;
@@ -14,8 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Map;
 
-import static net.sinedkadis.sacf.binds.SizeAttributeBind.scaleAttributes;
-import static net.sinedkadis.sacf.binds.SizeAttributeBind.toggleState;
+import static net.sinedkadis.ts_utils.binds.SizeAttributeBind.*;
 
 @Mixin(MinecraftClient.class)
 public abstract class MinecraftClientMixin {
@@ -32,9 +31,8 @@ public abstract class MinecraftClientMixin {
                         continue;
                     }
                     EntityAttributeInstance attributeInstance = attributeContainer.getCustomInstance(entry.attribute());
-                    assert attributeInstance != null;
-                    if (attributeInstance.getBaseValue() != entry.base()
-                            ||attributeInstance.getModifiers() != entry.modifiers()) {
+                    if (attributeInstance != null && (attributeInstance.getBaseValue() != entry.base()
+                            || attributeInstance.getModifiers() != entry.modifiers())) {
                         attributeInstance.setBaseValue(entry.base());
                         attributeInstance.clearModifiers();
                         entry.modifiers().forEach(attributeInstance::addTemporaryModifier);
@@ -49,9 +47,8 @@ public abstract class MinecraftClientMixin {
                         continue;
                     }
                     EntityAttributeInstance attributeInstance = attributeContainer.getCustomInstance(entry.attribute());
-                    assert attributeInstance != null;
-                    if (attributeInstance.getBaseValue() != entry.base()
-                            ||attributeInstance.getModifiers() != entry.modifiers()) {
+                    if (attributeInstance != null && (attributeInstance.getBaseValue() != entry.base()
+                            || attributeInstance.getModifiers() != entry.modifiers())) {
                         attributeInstance.setBaseValue(entry.attribute().value().getDefaultValue());
                         attributeInstance.clearModifiers();
                     }

@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "net.sinedkadis.sacf.mixin.client",
+  "package": "net.sinedkadis.ts_utils.mixin.client",
   "compatibilityLevel": "JAVA_21",
   "client": [
     "ClientPlayNetworkHandlerMixin",

@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "sacf",
+	"id": "ts_utils",
 	"version": "${version}",
-	"name": "Size Attribute Counter Fix",
-	"description": "Make scale attribute on newer versions work like on older",
+	"name": "TS Utils",
+	"description": "Small, totally not cheat utils",
 	"authors": [
 		"SinedKadis,Terriwin"
 	],
@@ -12,23 +12,23 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "MIT",
-	"icon": "assets/sacf/icon.png",
+	"icon": "assets/ts_utils/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.sinedkadis.sacf.ExampleMod"
+			"net.sinedkadis.ts_utils.TSUtilsCommon"
 		],
 		"client": [
-			"net.sinedkadis.sacf.SizeAttributeCounterFixClient"
+			"net.sinedkadis.ts_utils.TSUtilsClient"
 		],
 		"modmenu": [
-			"net.sinedkadis.sacf.config.ModMenuIntegration"
+			"net.sinedkadis.ts_utils.config.ModMenuIntegration"
 		]
 	},
 	"mixins": [
-		"sacf.mixins.json",
+		"ts_utils.mixins.json",
 		{
-			"config": "sacf.client.mixins.json",
+			"config": "ts_utils.client.mixins.json",
 			"environment": "client"
 		}
 	],

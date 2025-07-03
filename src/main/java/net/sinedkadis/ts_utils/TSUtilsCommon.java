@@ -1,8 +1,8 @@
-package net.sinedkadis.sacf;
+package net.sinedkadis.ts_utils;
 
 import net.fabricmc.api.ModInitializer;
 
-public class ExampleMod implements ModInitializer {
+public class TSUtilsCommon implements ModInitializer {
 	//public static final String MOD_ID = "sacf";
 
 	// This logger is used to write text to the console and the log file.
