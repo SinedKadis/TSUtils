@@ -21,12 +21,11 @@ public class SizeAttributeBind {
     private static boolean wasPressedLastTick = false;
     public static Map<AttributeContainer, EntityAttributesS2CPacket.Entry> scaleAttributes = new ConcurrentHashMap<>();
     public static void register() {
-        // Создаем бинд (клавиша "R" в данном случае)
         SIZE_ATTRIBUTE_BIND = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                "key.sacf.size_attribute_bind",
+                "key.ts_utils.size_attribute_bind",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_RIGHT_SHIFT,
-                "category.sacf.binds"
+                "category.ts_utils.binds"
         ));
 
         ClientTickEvents.END_CLIENT_TICK.register(SizeAttributeBind::updateScale);
@@ -37,13 +36,15 @@ public class SizeAttributeBind {
 
         if (isPressed && !wasPressedLastTick) {
             toggleState = !toggleState;
+            TSUtilsConfig.get().size_attribute = toggleState;
             applyScale();
             if (TSUtilsConfig.get().showToggleMessages && client.player != null) {
-                client.player.sendMessage(Text.translatable(toggleState ? "key.sacf.size_attribute_bind.enabled" : "key.sacf.size_attribute_bind.disabled"), false);
+                client.player.sendMessage(Text.translatable(toggleState ? "key.ts_utils.size_attribute_bind.enabled" : "key.ts_utils.size_attribute_bind.disabled"), false);
             }
         }
 
         wasPressedLastTick = isPressed;
+        toggleState = TSUtilsConfig.get().size_attribute;
     }
 
     public static void applyScale() {
@@ -64,33 +65,5 @@ public class SizeAttributeBind {
                 attributeInstance.clearModifiers();
             }
         }
-    }
-
-    public static void delayedApplyScale(MinecraftClient client) {
-        client.execute(
-                () -> client.execute(
-                        () -> client.execute(
-                                () -> client.execute(
-                                        () -> client.execute(
-                                                () -> client.execute(
-                                                        () -> client.execute(
-                                                                () -> client.execute(
-                                                                        () -> client.execute(
-                                                                                () -> {
-                                                                                    client.execute(
-                                                                                            () -> {
-                                                                                                applyScale();
-                                                                                            }
-                                                                                    );
-                                                                                }
-                                                                        )
-                                                                )
-                                                        )
-                                                )
-                                        )
-                                )
-                        )
-                )
-        );
     }
 }

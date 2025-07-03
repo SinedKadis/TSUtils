@@ -28,7 +28,7 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"size-attribute-counter-fix" {
+		"ts_utils" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}

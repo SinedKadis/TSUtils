@@ -1,9 +1,29 @@
 {
-  "key.sacf.size_attribute_bind": "Enable/Disable scale attribute ignoring",
-  "category.sacf.binds": "Size Attribute Counter Fix",
-  "key.sacf.size_attribute_bind.enabled": "Scale ignoring enabled",
-  "key.sacf.size_attribute_bind.disabled": "Scale ignoring disabled",
-  "text.autoconfig.sacf.option.showToggleMessages": "Show messages of toggling in chat",
-  "text.autoconfig.sacf.option.showToggleMessages.@Tooltip": "Yes, or no",
-  "text.autoconfig.sacf.title": "Size Attribute Counter Fix"
+  "category.ts_utils.binds": "Size Attribute Counter Fix",
+
+  "key.ts_utils.size_attribute_bind": "Enable/Disable scale attribute ignoring",
+  "key.ts_utils.size_attribute_bind.enabled": "Scale ignoring enabled",
+  "key.ts_utils.size_attribute_bind.disabled": "Scale ignoring disabled",
+
+  "key.ts_utils.breachSwap": "Enable/Disable breach swap",
+  "key.ts_utils.breachSwap.enabled": "Breach Swap enabled",
+  "key.ts_utils.breachSwap.disabled": "Breach Swap disabled",
+
+  "text.autoconfig.ts_utils.category.default": "Common",
+  "text.autoconfig.ts_utils.category.size_attribute_category": "Scale Attribute",
+  "text.autoconfig.ts_utils.category.breach_swap_category": "Breach Swap",
+
+  "text.autoconfig.ts_utils.option.showToggleMessages": "Show messages of toggling in chat",
+  "text.autoconfig.ts_utils.option.showToggleMessages.@Tooltip": "Yes, or no",
+
+  "text.autoconfig.ts_utils.option.size_attribute": "Toggles Scale Attribute Ignoring feature",
+  "text.autoconfig.ts_utils.option.size_attribute.@Tooltip": "Makes behavior like 1.20.1 client on 1.21.1 server (almost)",
+
+  "text.autoconfig.ts_utils.option.breachSwap": "Toggles BreachSwap feature",
+  "text.autoconfig.ts_utils.option.breachSwap.@Tooltip": "Changes slot when attacking and back",
+
+  "text.autoconfig.ts_utils.option.breachSwapSlot": "BreachSwap slot",
+  "text.autoconfig.ts_utils.option.breachSwapSlot.@Tooltip": "Hotbar slot for mace)",
+
+  "text.autoconfig.ts_utils.title": "Size Attribute Counter Fix"
 }

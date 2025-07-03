@@ -1,9 +1,29 @@
 {
-  "key.sacf.size_attribute_bind": "Вкл/выкл игнор scale атрибута",
-  "category.sacf.binds": "Size Attribute Counter Fix",
-  "key.sacf.size_attribute_bind.enabled": "Игнорирование Scale включено",
-  "key.sacf.size_attribute_bind.disabled": "Игнорирование Scale выключено",
-  "text.autoconfig.sacf.option.showToggleMessages": "Показывать сообщения о переключении в чате",
-  "text.autoconfig.sacf.option.showToggleMessages.@Tooltip": "Че зыришь",
-  "text.autoconfig.sacf.title": "Size Attribute Counter Fix"
+  "category.ts_utils.binds": "TS Utils",
+
+  "key.ts_utils.size_attribute_bind": "Вкл/выкл игнор scale атрибута",
+  "key.ts_utils.size_attribute_bind.enabled": "Игнорирование Scale включено",
+  "key.ts_utils.size_attribute_bind.disabled": "Игнорирование Scale выключено",
+
+  "key.ts_utils.breachSwap": "Вкл/выкл breach swap",
+  "key.ts_utils.breachSwap.enabled": "Breach swap включен",
+  "key.ts_utils.breachSwap.disabled": "Breach swap выключен",
+
+  "text.autoconfig.ts_utils.category.default": "Общие",
+  "text.autoconfig.ts_utils.category.size_attribute_category": "Scale атрибут",
+  "text.autoconfig.ts_utils.category.breach_swap_category": "Breach Swap",
+
+  "text.autoconfig.ts_utils.option.showToggleMessages": "Показывать сообщения о переключении в чате",
+  "text.autoconfig.ts_utils.option.showToggleMessages.@Tooltip": "Че зыришь",
+
+  "text.autoconfig.ts_utils.option.size_attribute": "Переключает игнорирование scale атрибута",
+  "text.autoconfig.ts_utils.option.size_attribute.@Tooltip": "Делает поведение как при 1.20.1 клиенте на 1.21.1 сервере (почти)",
+
+  "text.autoconfig.ts_utils.option.breachSwap": "Включает BreachSwap",
+  "text.autoconfig.ts_utils.option.breachSwap.@Tooltip": "Меняет слот во время атаки и назад",
+
+  "text.autoconfig.ts_utils.option.breachSwapSlot": "Слот для BreachSwap",
+  "text.autoconfig.ts_utils.option.breachSwapSlot.@Tooltip": "Слот для булавы",
+
+  "text.autoconfig.ts_utils.title": "Size Attribute Counter Fix"
 }
