@@ -5,13 +5,21 @@
   "key.ts_utils.size_attribute_bind.enabled": "Игнорирование Scale включено",
   "key.ts_utils.size_attribute_bind.disabled": "Игнорирование Scale выключено",
 
-  "key.ts_utils.breachSwap": "Вкл/выкл breach swap",
-  "key.ts_utils.breachSwap.enabled": "Breach swap включен",
-  "key.ts_utils.breachSwap.disabled": "Breach swap выключен",
+  "key.ts_utils.breachSwap": "Вкл/выкл BreachSwap",
+  "key.ts_utils.breachSwap.enabled": "BreachSwap включен",
+  "key.ts_utils.breachSwap.disabled": "BreachSwap выключен",
+
+  "key.ts_utils.breachSwapFromSlotAllow": "Разрешить BreachSwap только с настроенного слота",
+  "key.ts_utils.breachSwapFromSlotAllow.enabled": "Breach Swap с настроенного слота включен",
+  "key.ts_utils.breachSwapFromSlotAllow.disabled": "Breach Swap с настроенного слота выключен",
+
+  "key.ts_utils.breachSwapOnFullCharge": "Разрешить BreachSwap только при полной зарядке слота",
+  "key.ts_utils.breachSwapOnFullCharge.enabled": "Breach Swap при полной зарядке включен",
+  "key.ts_utils.breachSwapOnFullCharge.disabled": "Breach Swap при полной зарядке выключен",
 
   "text.autoconfig.ts_utils.category.default": "Общие",
   "text.autoconfig.ts_utils.category.size_attribute_category": "Scale атрибут",
-  "text.autoconfig.ts_utils.category.breach_swap_category": "Breach Swap",
+  "text.autoconfig.ts_utils.category.breach_swap_category": "BreachSwap",
 
   "text.autoconfig.ts_utils.option.showToggleMessages": "Показывать сообщения о переключении в чате",
   "text.autoconfig.ts_utils.option.showToggleMessages.@Tooltip": "Че зыришь",
@@ -25,5 +33,14 @@
   "text.autoconfig.ts_utils.option.breachSwapSlot": "Слот для BreachSwap",
   "text.autoconfig.ts_utils.option.breachSwapSlot.@Tooltip": "Слот для булавы",
 
-  "text.autoconfig.ts_utils.title": "Size Attribute Counter Fix"
+  "text.autoconfig.ts_utils.option.breachSwapOnFullCharge": "Делать BreachSwap только при полной зарядке слота",
+  "text.autoconfig.ts_utils.option.breachSwapOnFullCharge.@Tooltip": "сосал?",
+
+  "text.autoconfig.ts_utils.option.breachSwapFromSlotAllow": "Разрешить BreachSwap только со слота",
+  "text.autoconfig.ts_utils.option.breachSwapFromSlotAllow.@Tooltip": "Слот можно настроить ниже",
+
+  "text.autoconfig.ts_utils.option.breachSwapSlotFrom": "Слот для BreachSwap",
+  "text.autoconfig.ts_utils.option.breachSwapSlotFrom.@Tooltip": "Влияет только если включено",
+
+  "text.autoconfig.ts_utils.title": "TS Utils"
 }

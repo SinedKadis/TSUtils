@@ -15,6 +15,14 @@ public class BreachSwapBind {
     public static boolean toggleState = false;
     private static boolean wasPressedLastTick = false;
 
+    private static KeyBinding BREACH_SWAP_ON_FULL_CHARGE_BIND;
+    public static boolean toggleStateFC = false;
+    private static boolean wasPressedLastTickFC = false;
+
+    private static KeyBinding BREACH_SWAP_FROM_SLOT_BIND;
+    public static boolean toggleStateFS = false;
+    private static boolean wasPressedLastTickFS = false;
+
     public static boolean attackPressState = false;
     private static boolean wasAttackedLastTick = false;
     private static int wasPressedTickCoolDown = -1;
@@ -26,6 +34,18 @@ public class BreachSwapBind {
                 GLFW.GLFW_KEY_RIGHT_CONTROL,
                 "category.ts_utils.binds"
         ));
+        BREACH_SWAP_ON_FULL_CHARGE_BIND = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                "key.ts_utils.breachSwapOnFullCharge",
+                InputUtil.Type.KEYSYM,
+                GLFW.GLFW_KEY_MENU,
+                "category.ts_utils.binds"
+        ));
+        BREACH_SWAP_FROM_SLOT_BIND = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                "key.ts_utils.breachSwapFromSlotAllow",
+                InputUtil.Type.KEYSYM,
+                GLFW.GLFW_KEY_BACKSLASH,
+                "category.ts_utils.binds"
+        ));
         ClientTickEvents.START_CLIENT_TICK.register(BreachSwapBind::onTick);
     }
 
@@ -34,6 +54,8 @@ public class BreachSwapBind {
         ClientPlayerEntity player = minecraftClient.player;
         attackPressState = minecraftClient.options.attackKey.isPressed();
         boolean isPressed = BREACH_SWAP_BIND.isPressed();
+        boolean isPressedFC = BREACH_SWAP_ON_FULL_CHARGE_BIND.isPressed();
+        boolean isPressedFS = BREACH_SWAP_FROM_SLOT_BIND.isPressed();
         if (isPressed && !wasPressedLastTick) {
             toggleState = !toggleState;
             TSUtilsConfig.get().breachSwap = toggleState;
@@ -41,14 +63,33 @@ public class BreachSwapBind {
                 client.player.sendMessage(Text.translatable(toggleState ? "key.ts_utils.breachSwap.enabled" : "key.ts_utils.breachSwap.disabled"), false);
             }
         }
+        if (isPressedFC && !wasPressedLastTickFC) {
+            toggleStateFC = !toggleStateFC;
+            TSUtilsConfig.get().breachSwapOnFullCharge = toggleStateFC;
+            if (TSUtilsConfig.get().showToggleMessages && client.player != null) {
+                client.player.sendMessage(Text.translatable(toggleStateFC ? "key.ts_utils.breachSwapOnFullCharge.enabled" : "key.ts_utils.breachSwapOnFullCharge.disabled"), false);
+            }
+        }
+        if (isPressedFS && !wasPressedLastTickFS) {
+            toggleStateFS = !toggleStateFS;
+            TSUtilsConfig.get().breachSwapFromSlotAllow = toggleStateFS;
+            if (TSUtilsConfig.get().showToggleMessages && client.player != null) {
+                client.player.sendMessage(Text.translatable(toggleStateFS ? "key.ts_utils.breachSwapFromSlotAllow.enabled" : "key.ts_utils.breachSwapFromSlotAllow.disabled"), false);
+            }
+        }
         if (attackPressState && !wasAttackedLastTick && toggleState){
-            wasPressedTickCoolDown = 4;
             if (player != null) {
-                int selectedSlot = player.getInventory().selectedSlot;
-                if (selectedSlot != TSUtilsConfig.get().breachSwapSlot-1) {
-                    lastSlot = selectedSlot;
+                float attackCooldownProgress = player.getAttackCooldownProgress(0.5f);
+                if (!TSUtilsConfig.get().breachSwapOnFullCharge || attackCooldownProgress == 1){
+                    int selectedSlot = player.getInventory().selectedSlot;
+                    if (selectedSlot != TSUtilsConfig.get().breachSwapSlot-1) {
+                        lastSlot = selectedSlot;
+                    }
+                    if (!TSUtilsConfig.get().breachSwapFromSlotAllow || TSUtilsConfig.get().breachSwapSlotFrom-1 == selectedSlot) {
+                        player.getInventory().selectedSlot = TSUtilsConfig.get().breachSwapSlot - 1;
+                        wasPressedTickCoolDown = 4;
+                    }
                 }
-                player.getInventory().selectedSlot = TSUtilsConfig.get().breachSwapSlot-1;
             }
         }
         if (wasPressedTickCoolDown == 0){
@@ -59,16 +100,13 @@ public class BreachSwapBind {
         }
         wasPressedTickCoolDown = Math.max(-1,wasPressedTickCoolDown-1);
         wasAttackedLastTick = attackPressState;
+
         wasPressedLastTick = isPressed;
+        wasPressedLastTickFC = isPressedFC;
+        wasPressedLastTickFS = isPressedFS;
+
         toggleState = TSUtilsConfig.get().breachSwap;
-//        if (isPressed && !wasPressedLastTick) {
-//            toggleState = !toggleState;
-//            applyScale();
-//            if (TSUtilsConfig.get().showToggleMessages && client.player != null) {
-//                client.player.sendMessage(Text.translatable(toggleState ? "key.sacf.size_attribute_bind.enabled" : "key.sacf.size_attribute_bind.disabled"), false);
-//            }
-//        }
-//
-//        wasPressedLastTick = isPressed;
+        toggleStateFC = TSUtilsConfig.get().breachSwapOnFullCharge;
+        toggleStateFS = TSUtilsConfig.get().breachSwapFromSlotAllow;
     }
 }

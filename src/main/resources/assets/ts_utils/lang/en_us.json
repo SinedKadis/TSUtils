@@ -1,17 +1,25 @@
 {
-  "category.ts_utils.binds": "Size Attribute Counter Fix",
+  "category.ts_utils.binds": "TS Utils",
 
   "key.ts_utils.size_attribute_bind": "Enable/Disable scale attribute ignoring",
   "key.ts_utils.size_attribute_bind.enabled": "Scale ignoring enabled",
   "key.ts_utils.size_attribute_bind.disabled": "Scale ignoring disabled",
 
-  "key.ts_utils.breachSwap": "Enable/Disable breach swap",
-  "key.ts_utils.breachSwap.enabled": "Breach Swap enabled",
-  "key.ts_utils.breachSwap.disabled": "Breach Swap disabled",
+  "key.ts_utils.breachSwap": "Enable/Disable BreachSwap",
+  "key.ts_utils.breachSwap.enabled": "BreachSwap enabled",
+  "key.ts_utils.breachSwap.disabled": "BreachSwap disabled",
+
+  "key.ts_utils.breachSwapFromSlotAllow": "Allow BreachSwap only from configured slot",
+  "key.ts_utils.breachSwapFromSlotAllow.enabled": "Breach Swap from configured slot enabled",
+  "key.ts_utils.breachSwapFromSlotAllow.disabled": "Breach Swap from configured slot disabled",
+
+  "key.ts_utils.breachSwapOnFullCharge": "Allow BreachSwap only when slot is fully charged",
+  "key.ts_utils.breachSwapOnFullCharge.enabled": "Breach Swap on charge enabled",
+  "key.ts_utils.breachSwapOnFullCharge.disabled": "Breach Swap on charge disabled",
 
   "text.autoconfig.ts_utils.category.default": "Common",
   "text.autoconfig.ts_utils.category.size_attribute_category": "Scale Attribute",
-  "text.autoconfig.ts_utils.category.breach_swap_category": "Breach Swap",
+  "text.autoconfig.ts_utils.category.breach_swap_category": "BreachSwap",
 
   "text.autoconfig.ts_utils.option.showToggleMessages": "Show messages of toggling in chat",
   "text.autoconfig.ts_utils.option.showToggleMessages.@Tooltip": "Yes, or no",
@@ -25,5 +33,14 @@
   "text.autoconfig.ts_utils.option.breachSwapSlot": "BreachSwap slot",
   "text.autoconfig.ts_utils.option.breachSwapSlot.@Tooltip": "Hotbar slot for mace)",
 
-  "text.autoconfig.ts_utils.title": "Size Attribute Counter Fix"
+  "text.autoconfig.ts_utils.option.breachSwapOnFullCharge": "Do BreachSwap only on full charge on slot",
+  "text.autoconfig.ts_utils.option.breachSwapOnFullCharge.@Tooltip": "Yes, or no",
+
+  "text.autoconfig.ts_utils.option.breachSwapFromSlotAllow": "Allow BreachSwap only from slot",
+  "text.autoconfig.ts_utils.option.breachSwapFromSlotAllow.@Tooltip": "Slot can be configured right down",
+
+  "text.autoconfig.ts_utils.option.breachSwapSlotFrom": "Slot for BreachSwap",
+  "text.autoconfig.ts_utils.option.breachSwapSlotFrom.@Tooltip": "Works only if allowed",
+
+  "text.autoconfig.ts_utils.title": "TS Utils"
 }
