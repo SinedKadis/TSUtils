@@ -24,10 +24,10 @@
   "text.autoconfig.ts_utils.option.showToggleMessages": "Показывать сообщения о переключении в чате",
   "text.autoconfig.ts_utils.option.showToggleMessages.@Tooltip": "Че зыришь",
 
-  "text.autoconfig.ts_utils.option.size_attribute": "Переключает игнорирование scale атрибута",
+  "text.autoconfig.ts_utils.option.size_attribute": "Переключить игнорирование scale атрибута",
   "text.autoconfig.ts_utils.option.size_attribute.@Tooltip": "Делает поведение как при 1.20.1 клиенте на 1.21.1 сервере (почти)",
 
-  "text.autoconfig.ts_utils.option.breachSwap": "Включает BreachSwap",
+  "text.autoconfig.ts_utils.option.breachSwap": "Включить BreachSwap",
   "text.autoconfig.ts_utils.option.breachSwap.@Tooltip": "Меняет слот во время атаки и назад",
 
   "text.autoconfig.ts_utils.option.breachSwapSlot": "Слот для BreachSwap",

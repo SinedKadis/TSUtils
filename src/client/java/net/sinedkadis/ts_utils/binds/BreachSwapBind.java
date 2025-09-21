@@ -81,12 +81,12 @@ public class BreachSwapBind {
             if (player != null) {
                 float attackCooldownProgress = player.getAttackCooldownProgress(0.5f);
                 if (!TSUtilsConfig.get().breachSwapOnFullCharge || attackCooldownProgress == 1){
-                    int selectedSlot = player.getInventory().selectedSlot;
+                    int selectedSlot = player.getInventory().getSelectedSlot();
                     if (selectedSlot != TSUtilsConfig.get().breachSwapSlot-1) {
                         lastSlot = selectedSlot;
                     }
                     if (!TSUtilsConfig.get().breachSwapFromSlotAllow || TSUtilsConfig.get().breachSwapSlotFrom-1 == selectedSlot) {
-                        player.getInventory().selectedSlot = TSUtilsConfig.get().breachSwapSlot - 1;
+                        player.getInventory().setSelectedSlot(TSUtilsConfig.get().breachSwapSlot - 1);
                         wasPressedTickCoolDown = 4;
                     }
                 }
@@ -94,7 +94,7 @@ public class BreachSwapBind {
         }
         if (wasPressedTickCoolDown == 0){
             if (player != null && lastSlot != -1) {
-                player.getInventory().selectedSlot = lastSlot;
+                player.getInventory().setSelectedSlot(lastSlot);
                 lastSlot = -1;
             }
         }

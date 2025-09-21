@@ -34,10 +34,10 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.16.2",
-		"minecraft": "1.21.1",
+		"minecraft": "1.21.8",
 		"java": ">=21",
 		"fabric-api": "*",
-		"cloth-config": ">=11.1.106",
+		"cloth-config": ">=19.0.147",
 		"fabric-networking-api-v1": "*"
 	},
 	"suggests": {
