@@ -53,7 +53,7 @@ public abstract class ClientPlayNetworkHandlerMixin extends ClientCommonNetworkH
 			for (EntityAttributesS2CPacket.Entry entry : packet.getEntries()) {
 				EntityAttributeInstance attributeInstance = attributeContainer.getCustomInstance(entry.attribute());
 				if (attributeInstance != null) {
-					if (entry.attribute().equals(EntityAttributes.GENERIC_SCALE)) {
+					if (entry.attribute().equals(EntityAttributes.SCALE)) {
 						scaleAttributes.put(attributeContainer, entry);
 						continue;
 					}
