@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "sacf",
 	"version": "${version}",
 	"name": "Size Attribute Counter Fix",
 	"description": "Make scale attribute on newer versions work like on older",
@@ -30,10 +30,11 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.16.9",
-		"minecraft": ">=1.21.1",
+		"fabricloader": ">=0.16.2",
+		"minecraft": "1.21.8",
 		"java": ">=21",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"fabric-networking-api-v1": "*"
 	},
 	"suggests": {
 		"another-mod": "*"
