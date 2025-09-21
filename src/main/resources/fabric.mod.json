@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "ts_utils",
+	"id": "size-attribute-counter-fix",
 	"version": "${version}",
-	"name": "TS Utils",
-	"description": "Small, totally not cheat utils",
+	"name": "Size Attribute Counter Fix",
+	"description": "Make scale attribute on newer versions work like on older",
 	"authors": [
 		"SinedKadis,Terriwin"
 	],
